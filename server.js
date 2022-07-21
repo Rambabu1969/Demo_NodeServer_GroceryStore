@@ -1,3 +1,4 @@
+//npm install express
 var express = require('express');
 var app = express();
 
@@ -6,20 +7,19 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
 // set port, listen for requests
-const PORT = process.env.PORT || 8081;
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
-
 
 // Default Route
 app.get('/', function (req, res) {
      res.send('<h1>Hello MongoDB</h1>');
   })
   
-
 //working with MongoDB
+//npm install mongodb
 var mongo = require('mongodb');
 var MongoClient = mongo.MongoClient;
 
